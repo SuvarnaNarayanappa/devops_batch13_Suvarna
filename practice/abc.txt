@@ -1,0 +1,127 @@
+................
+administrative commands cont.......
+
+Ex: sudo chmod 777 kiran.txt
+
+Above command will provide read,write and execute permissions for user,group and others
+
+Ex: sudo chmod 765 kiran.txt
+
+Above command will provide read,write and execute permissions for user
+group will have read and write permission and others will have read and execute permission
+
+u=user g=group o=others
+
+sudo chmod u+x kiran.txt
+
+Above command will provide execute permission to the user
+
+sudo chmod g-w kiran.txt
+
+Above command remove write permssion for a group
+
+.............................................................
+
+Link
+
+A link is a reference/pointer to a file/dir
+Link allows multiple access points to same data without duplicating files
+
+Types:1`
+
+1. Hardlink
+
+Hard link is an additional name for existing file where both the original file and hard link
+will share the same inode which means they are same file with diff names
+
+inode (index node): It is data structure that stores information about file/dir's size,owner..etc
+
+synatx: ln <file-name> <link-name>
+
+Note:
+
+1. When you make any changes to original file,we can see those changes in the link
+2. If you rename the original file,the link will work
+3. If we delete the original file then also your link will work
+
+2. Softlink
+
+A softlink is a pointer to a file. It does not share same inode as the original file
+
+
+synatx: ln -s <file-name> <link-name>
+
+Note:
+
+1. When you make any changes to original file,we can see those changes in the link
+2. If you rename the original file,then link will not work
+3. If we delete the original file then link will not work
+
+................
+
+Grep Command (global regular expression)
+
+Grep command is used to search and filter the text/pattern
+
+Syntax: grep <pattern> file-name
+
+Above command will display the lines where the pattern is present
+.......
+
+grep -w <pattern> <file-name>
+
+Above command will display the exact pattern of a closed file
+...............
+
+grep -o <pattern> <file-name>
+
+Above command will display the exact pattern on the terminal istead of full line
+..................
+
+grep -i <pattern> <file-name>
+
+Above command will display all the lines where the case insensitive patterns are present
+...................
+
+oem@oem-InsydeH2O-EFI-BIOS:~/batch13$ grep -i -w good class4.txt
+good goodmorning
+good morning
+good morning good morning
+good good GOOD good GOOG
+goood good
+good
+Above command will the case insensitive exact pattern on the terminal
+..............
+
+grep -v <pattern> <file-name>
+
+Above command will display all the lines aprt from the lines where the pattern is present
+
+.....................
+grep -n <pattern> <file-name>
+
+Above command will display the lines where the  pattern is present along with line number
+
+..................
+grep -c <pattern> <file-name>
+
+Above command will display total no of lines where the pattern is present
+
+.........................
+grep -n -i <pattern> <file-name>
+ABove command will display the line number where the pattern is prest along with case insensitive pattern
+
+...........................
+grep "good-morning" <file-name>
+
+this command will search the pattern good-morning in a file  and display on
+the terminal if it is present
+.................................
+
+How to search mutiple patterns using grep command
+
+Syntax: grep -e "pattern1" -e "pattern2" filename
+
+ex: grep -e good -e hello class4.txt
+
+....................
